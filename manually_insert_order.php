@@ -105,10 +105,10 @@ $quantity = '1';
     echo 'date:' . zen_draw_input_field('nameDate',$date, 'style=width:75px'); //function zen_draw_input_field($name, $value = '', $parameters = '', $type = 'text', $reinsert_value = true) {
     echo 'oid:' . zen_draw_input_field('nameAmazonOrderId',$order_id, 'style=width:145px'); //function zen_draw_input_field($name, $value = '', $parameters = '', $type = 'text', $reinsert_value = true) {
     echo 'quan:' . zen_draw_input_field('nameQuan',$quantity, 'style="width:25px"');
-    echo zen_draw_form('formName', 'formAction');
-    $products_name = $sku; //reset if actual name is pulled from zen-cart db in products_cost query
-   
+    //echo zen_draw_form('formName', 'formAction');
+    
     $sku = 'MYPRODUCTMODEL-001';
+    $products_name = $sku; //reset if actual name is pulled from zen-cart db in products_cost query
     $yourearnings = '72.09';
     $amazons_sku = 'YB-8T8E-MW38';
     $prodCostResult = $db->Execute("SELECT DISTINCT products_cost, products_id FROM " . TABLE_PRODUCTS . " p WHERE p.products_model='". $sku . "' LIMIT 1");
@@ -143,4 +143,3 @@ $quantity = '1';
     }
     echo zen_image_submit('button_insert.gif', IMAGE_INSERT);
     echo '</form>';
-?>
